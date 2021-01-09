@@ -4,16 +4,17 @@
     <title>WitchWood</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <!-- Add responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta charset="UTF-8">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/07fda475e7.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
   <%= render 'navigation/navbar' %>
+  <div id="page-content">
     <%= yield %>
+  </div>
   </body>
 </html>

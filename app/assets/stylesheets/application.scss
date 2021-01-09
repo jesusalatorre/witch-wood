@@ -1,1 +1,24 @@
 @import "bulma";
+
+#page-content{
+  background-color:hsl(0, 0%, 4%) !important;
+}
+
+#home-hero{
+  background-image: asset-url('dark-forest.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.is-primary{
+  background-color: salmon !important;
+}
+.navbar-item{
+  color: hsl(0, 0%, 96%) !important;
+}
+
+.navbar-item:hover{
+  color: salmon !important;
+  background-color: hsl(0, 0%, 4%) !important;
+}
