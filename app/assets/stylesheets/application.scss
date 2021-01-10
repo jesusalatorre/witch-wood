@@ -22,3 +22,23 @@
   color: salmon !important;
   background-color: hsl(0, 0%, 4%) !important;
 }
+
+@keyframes darken {
+  from {background-color:  hsl(0, 0%, 96%); } 
+  to {background-color: hsl(0, 0%, 4%); }
+}
+
+.tile-button{
+  background-color: hsl(0, 0%, 96%);
+  animation-name: darken;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-direction:normal;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+
+.tile-button:hover{
+  animation-play-state: running;
+}
