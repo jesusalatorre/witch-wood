@@ -19,7 +19,6 @@ class MonstersController < ApplicationController
   def create 
     @monster = Monster.new(monster_params)
     if @monster.save
-      flash[:notice] = "Article was created successfully."
       redirect_to @monster
     else
       render 'new'
@@ -46,7 +45,7 @@ class MonstersController < ApplicationController
   end
 
   def monster_params
-    params.require(:monster).permit(:name, :description)
+    params.require(:monster).permit(:name, :description, :size, :monster_type, :hit_points, :armor_class, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma)
   end
 
 end

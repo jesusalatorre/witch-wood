@@ -1,29 +1,102 @@
-<h1> Show </h1>
+<div class="container"> 
+  <div class="columns is-multiline is-mobile">
+    
+        <div class="column is-one-half">
+          
+        <!-- Content -->
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="content">
+                
+                    <h1 class="title"><%= link_to @monster.name, monster_path(@monster), class: "has-text-dark"%></h1>
+                    <p class="subtitle"><%= @monster.size %> <%= @monster.monster_type %></p>
+            
+                
+                  <table class="table">
+                    <thead>
+                      <th><span class="icon is-small is-left is-salmon"><i class="fas fa-heart"></i></span>
+                        Hitpoints
+                      </th>
+                      <th><span class="icon is-small is-left is-salmon"><i class="fas fa-shield-alt"></i></span>
+                        Armor Class
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><%= @monster.hit_points %></td>
+                        <td><%= @monster.armor_class %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+              
+              
+    
+            </div>
+          </div>
 
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-4"><%= @monster.name %></p>
-        <p class="subtitle is-6">by Author</p>
-      </div>
-    </div>
 
-    <div class="content">
-      <%= @monster.description %>
-      <a href="#">#css</a> <a href="#">#responsive</a>
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+
+      <div class="content">        
+        <p class="subtitle">
+          <%= @monster.description %>
+        </p>
+      </div>
+
+      <!-- Statblock -->
+      <div class="content">
+
+          <table class="table is-narrow">
+            <thead>
+              <th><span class="icon is-small is-left"><i class="fas fa-fist-raised"></i></span>
+                Strength
+                </th>
+              <th><span class="icon is-small is-left"><i class="fas fa-bullseye"></i></span>
+                Dexterity
+              </th>
+              <th><span class="icon is-small is-left"><i class="fas fa-heartbeat"></i></span>
+                Constitution
+                </th>
+              <th><span class="icon is-small is-left"><i class="fas fa-book-reader"></i></span>
+                Intelligence
+              </th>
+              <th><span class="icon is-small is-left"><i class="fas fa-brain"></i></span>
+                Wisdom
+              </th>
+              <th><span class="icon is-small is-left"><i class="fas fa-theater-masks"></i></span>
+                Charisma
+              </th>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= @monster.strength %></td>
+                <td><%= @monster.dexterity %></td>
+                <td><%= @monster.constitution %></td>
+                <td><%= @monster.intelligence %></td>
+                <td><%= @monster.wisdom %></td>
+                <td><%= @monster.charisma %></td>
+              </tr>
+            </tbody>
+
+          </table>
+      </div>
+
+      <div class="content">
+        <br>
+        <small>Last updated <%= time_ago_in_words(@monster.updated_at)%> ago.</time><br>
+        <small>Created <%= time_ago_in_words(@monster.created_at) %> ago.</time>
+      </div>
+
     </div>
   </div>
+
+        </div>
+
+  </div>
+  <%= link_to 'Delete', monster_path(@monster), method: :delete, class: "button is-primary" %>
 </div>

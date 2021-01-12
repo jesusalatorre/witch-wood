@@ -20,6 +20,97 @@
       </div>
     </div>
 
+    <div class="field is-grouped is-grouped-multiline">
+      <div class="control select">
+        <%= f.select(:size, ["Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"], class: "select", prompt: "Size") %>
+      </div>
+
+      <div class="control select">
+        <%= f.select(:monster_type, 
+                      ["Aberration", "Beast", "Celestial", "Construct", "Dragon",
+                      "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity",
+                      "Ooze", "Plant", "Undead", "Other"],
+                    class: "select",
+                    prompt: "Type" ) %>
+      </div>
+
+ 
+    </div>
+
+      <div class="field is-grouped is-grouped-multiline">
+
+        <div class="control has-icons-left">
+          <%= f.text_field :hit_points, class: "input", placeholder: " Hit Points" %>
+          <span class="icon is-small is-left is-primary">
+            <i class="fas fa-heart"></i>
+          </span>
+
+        </div>
+
+        <div class="control has-icons-left">
+          <%= f.text_field :armor_class, class: "input", placeholder: " Armor Class"%>
+          <span class="icon is-small is-left is-primary">
+            <i class="fas fa-shield-alt"></i>
+          </span>
+
+        </div>
+
+      <!-- STATS  -->
+      
+
+        <div class="control has-icons-left">
+          <%= f.text_field :strength, class: "input", placeholder: " Strength"%>
+          <span class="icon is-small is-left is-primary">
+            <i class="fas fa-fist-raised"></i>
+          </span>
+
+        </div>
+
+        <div class="control has-icons-left">
+          <%= f.text_field :dexterity, class: "input", placeholder: " Dexterity"%>
+          <span class="icon is-small is-left is-primary">
+            <i class="fas fa-bullseye"></i>
+          </span>
+
+        </div>
+
+        <div class="control has-icons-left">
+          <%= f.text_field :constitution, class: "input", placeholder: " Constitution"%>
+          <span class="icon is-small is-left is-primary">
+            <i class="fas fa-heartbeat"></i>
+          </span>
+
+        </div>
+
+        <div class="control has-icons-left">
+          <%= f.text_field :intelligence, class: "input", placeholder: " Intelligence"%>
+          <span class="icon is-small is-left is-primary">
+            <i class="fas fa-book-reader"></i>
+          </span>
+
+        </div>
+
+        <div class="control has-icons-left">
+          <%= f.text_field :wisdom, class: "input", placeholder: " Wisdom"%>
+          <span class="icon is-small is-left is-primary">
+            <i class="fas fa-brain"></i>
+          </span>
+
+        </div>
+
+        <div class="control has-icons-left">
+          <%= f.text_field :charisma, class: "input", placeholder: " Charisma"%>
+          <span class="icon is-small is-left is-primary">
+            <i class="fas fa-theater-masks"></i>
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+
     <div class="control">
       <%= f.submit "Save Monster", class: "button is-primary" %>
     </div>
