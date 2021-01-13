@@ -1,6 +1,23 @@
-<div class="container">
+<div class="container mb-4">
   <h1> Monsters Index </h1>
-  <%= link_to 'Create', new_monster_path, class: "button is-primary" %>
+  <button class="button is-primary">
+    <span class="icon-text">
+    <span class="icon">
+    <i class="far fa-plus-square"></i>
+    </span>
+    <span><%= link_to "Create", new_monster_path(), class: "has-text-light"%></span>
+    </span>
+  </button>
 </div>
 
-<%= render 'monster' %>
+<div class="container">
+<%= will_paginate @monsters, :container => false, renderer: BulmaPagination::Rails, class: "is-centered is-small", next_label: ">", previous_label: "<" %>
+</div>
+
+<div class="container">
+  <%= render 'monster' %>
+</div>
+
+<div class="container">
+  <%= will_paginate @monsters, :container => false, renderer: BulmaPagination::Rails, class: "is-centered is-small", next_label: ">", previous_label: "<" %>
+</div>

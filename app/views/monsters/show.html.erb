@@ -1,5 +1,5 @@
 <div class="container"> 
-  <div class="columns is-multiline is-mobile">
+  <div class="columns is-multiline is-mobile pt-4">
     
         <div class="column is-one-half">
           
@@ -11,6 +11,11 @@
                 <figure class="image is-48x48">
                   <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
                 </figure>
+              </div>
+              <div class="media">
+                <div class="media-right">
+                  
+                </div>
               </div>
               <div class="content">
                 <h1 class="title"><%= link_to @monster.name, monster_path(@monster), class: "has-text-dark"%></h1>
@@ -81,6 +86,41 @@
           </table>
       </div>
       <!-- end statblock -->
+    <% if !@monster.senses.empty? %>
+      <div class="content">
+        <h3 class="subtitle">
+          Senses
+        </h3>
+        <p><%= simple_format(@monster.senses) %></p>
+      </div>
+      <% end %>
+
+    <% if !@monster.actions.empty? %>
+      <div class="content">
+        <h3 class="subtitle">
+          Actions
+        </h3>
+        <p><%= simple_format(@monster.actions) %></p>
+      </div>
+    <% end %>
+
+    <% if !@monster.reactions.nil? %>
+      <div class="content">
+        <h3 class="subtitle">
+          Reactions
+        </h3>
+        <p><%= simple_format(@monster.reactions) %></p>
+      </div>
+    <% end %>
+
+    <% if !@monster.loot.empty? %>
+      <div class="content">
+        <h3 class="subtitle">
+          Loot
+        </h3>
+        <p><%= simple_format(@monster.loot) %></p>
+      </div>
+      <% end %>
 
       <div class="content">
         <br>
@@ -93,6 +133,8 @@
   </div>
 
   </div>
-  <%= link_to 'Delete', monster_path(@monster), method: :delete, class: "button is-primary" %>
-
+  <div class="buttons is-right">
+    <%= link_to "Edit", edit_monster_path(@monster), class: "button is-primary" %>
+    <%= link_to 'Delete', monster_path(@monster), method: :delete, class: "button is-primary" %>
+  </div>
 </div>

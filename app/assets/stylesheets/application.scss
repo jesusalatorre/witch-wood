@@ -1,4 +1,17 @@
+$pagination-current-background-color: salmon;
+$pagination-current-border-color: #fff;
+
+$pagination-hover-border-color: salmon;
+$pagination-hover-color: salmon;
+
+$pagination-focus-border-color: salmon;
+
+
 @import "bulma";
+
+a{
+  color: salmon;
+}
 
 #page-content{
   background-color:hsl(0, 0%, 4%) !important;
