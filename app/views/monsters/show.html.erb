@@ -13,11 +13,10 @@
                 </figure>
               </div>
               <div class="content">
-                
-                    <h1 class="title"><%= link_to @monster.name, monster_path(@monster), class: "has-text-dark"%></h1>
-                    <p class="subtitle"><%= @monster.size %> <%= @monster.monster_type %></p>
-            
-                
+                <h1 class="title"><%= link_to @monster.name, monster_path(@monster), class: "has-text-dark"%></h1>
+                <p class="subtitle"><%= @monster.size %> <%= @monster.monster_type %></p>
+
+                <!-- HP and AC -->
                   <table class="table">
                     <thead>
                       <th><span class="icon is-small is-left is-salmon"><i class="fas fa-heart"></i></span>
@@ -34,10 +33,8 @@
                       </tr>
                     </tbody>
                   </table>
-              
-              
-    
-            </div>
+                <!-- end HP and AC -->
+              </div>
           </div>
 
 
@@ -50,9 +47,8 @@
 
       <!-- Statblock -->
       <div class="content">
-
-          <table class="table is-narrow">
-            <thead>
+          <table class="table is-narrow ">
+            <thead class="is-center subtitle">
               <th><span class="icon is-small is-left"><i class="fas fa-fist-raised"></i></span>
                 Strength
                 </th>
@@ -72,7 +68,7 @@
                 Charisma
               </th>
             </thead>
-            <tbody>
+            <tbody class="subtitle">
               <tr>
                 <td><%= @monster.strength %></td>
                 <td><%= @monster.dexterity %></td>
@@ -82,9 +78,9 @@
                 <td><%= @monster.charisma %></td>
               </tr>
             </tbody>
-
           </table>
       </div>
+      <!-- end statblock -->
 
       <div class="content">
         <br>
@@ -94,9 +90,9 @@
 
     </div>
   </div>
-
-        </div>
+  </div>
 
   </div>
   <%= link_to 'Delete', monster_path(@monster), method: :delete, class: "button is-primary" %>
+
 </div>

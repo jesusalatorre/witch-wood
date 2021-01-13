@@ -45,7 +45,7 @@ class MonstersController < ApplicationController
   end
 
   def monster_params
-    params.require(:monster).permit(:name, :description, :size, :monster_type, :hit_points, :armor_class, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma)
+    params.require(:monster).permit(:name, :description, :size, :monster_type, :hit_points, :armor_class, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :senses, :actions, :reations, :loot)
   end
 
 end

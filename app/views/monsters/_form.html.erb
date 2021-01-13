@@ -7,16 +7,16 @@
     <%= form_with(model: @monster, class: "control", local: true) do |f| %>
 
     <div class="field">
-      <%= f.label :name, class: "label" %>
+      <%= f.label :name, class: "label has-text-light" %>
       <div class="control">
       <%= f.text_field :name, class: "input", placeholder: "Name the monster" %>
       </div>
     </div>
 
     <div class="field">
-      <%= f.label :description, class: "label" %>
+      <%= f.label :description, class: "label has-text-light" %>
       <div class="control">
-        <%= f.text_area :description, class: "textarea", placeholder: "Describe the monster"%>
+        <%= f.text_area :description, class: "textarea", placeholder: "Describe the monster", rows: 3 %>
       </div>
     </div>
 
@@ -107,6 +107,35 @@
         </div>
 
       </div>
+
+
+    <div class="field">
+      <%= f.label :senses, class: "label has-text-light" %>
+      <div class="control">
+        <%= f.text_area :senses, class: "textarea", placeholder: "Ex: Darkvision 120ft, Tremorsense 15ft", rows: 2 %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :actions, class: "label has-text-light" %>
+      <div class="control">
+        <%= f.text_area :actions, class: "textarea", placeholder: "Ex: Bite: +5 to hit, 1d8+3 slashing damage on hit", rows: 5 %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :reactions, class: "label has-text-light" %>
+      <div class="control">
+        <%= f.text_area :reactions, class: "textarea", placeholder: "Ex: Shield (1/day)", rows: 2%>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :loot, class: "label has-text-light" %>
+      <div class="control">
+        <%= f.text_area :loot, class: "textarea", placeholder: "What would this monster carry with it?", rows: 5%>
+      </div>
+    </div>
 
 
 
