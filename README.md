@@ -1,4 +1,4 @@
-# README
+# Witchwood
 
-### witch-wood
-##### a web app to store my homebrew
+### A web app for storing 5e homebrew creations as sharable units.
+
