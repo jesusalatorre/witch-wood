@@ -18,6 +18,7 @@ class MonstersController < ApplicationController
 
   def create 
     @monster = Monster.new(monster_params)
+    @monster.user = User.first
     if @monster.save
       redirect_to @monster
     else

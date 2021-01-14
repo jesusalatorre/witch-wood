@@ -1,4 +1,6 @@
 class Monster < ApplicationRecord
+  belongs_to :user
+  
   validates :name, presence: true, length: { minimum: 3, maximum: 40 }
   validates :description, presence: true, length: { minimum: 3, maximum: 150 }
   
