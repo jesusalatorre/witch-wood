@@ -1,5 +1,7 @@
 class MonstersController < ApplicationController
   before_action :set_monster, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:show, :index]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def show
 
@@ -47,6 +49,13 @@ class MonstersController < ApplicationController
 
   def monster_params
     params.require(:monster).permit(:name, :description, :size, :monster_type, :hit_points, :armor_class, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :senses, :actions, :reations, :loot)
+  end
+
+  def require_same_user
+    if current_user != @monster.user
+      flash[:alert] = "You can only edit or delete your own monsters."
+      redirect_to monster_path(@monster)
+    end
   end
 
 end
