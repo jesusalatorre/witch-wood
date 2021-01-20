@@ -1,7 +1,7 @@
 
 <h1 class="title"> <%= @user.username  %>'s profile</h1>
 
-<%= link_to "Edit your profile", edit_user_path(@user), class: "button" %>
+<%= link_to "Edit your profile", edit_user_path(@user), class: "button is-primary" %>
 
 <div class="container">
 <%= will_paginate @monsters, :container => false, renderer: BulmaPagination::Rails, class: "is-centered is-small", next_label: ">", previous_label: "<" %>
