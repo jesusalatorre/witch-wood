@@ -2,6 +2,7 @@
   <div class="column"></div>
 
   <div class="column">
+    <%= render 'shared/errors', obj: @user %>
     <%= form_with(model: @user, class: "control", local: true) do |f| %>
 
     <div class="field">
@@ -21,7 +22,7 @@
     </div>
 
     <div class="field">
-    <%= f.submit "Sign Up", class: "button is-primary" %>
+    <%= f.submit(@user.new_record? ? "Sign Up" : "Update account", class: "button is-primary") %>
     </div>
     <% end %>
   </div>

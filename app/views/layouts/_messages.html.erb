@@ -1,8 +1,9 @@
 <div class="container">
   <% flash.each do |name, msg| %>
-    <div role="alert">
-      <%= msg %>
-      <button type="button" aria-label=Close></button>
-    </div>
+    <article class="message is-danger">
+      <div class="message-body">
+        <%= msg %>
+      </div>
+    </article>
   <% end %>
 </div>

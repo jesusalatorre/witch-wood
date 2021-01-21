@@ -4,6 +4,7 @@
   <div class="column"></div>
 
   <div class="column">
+    <%= render 'shared/errors', obj: @monster %>
     <%= form_with(model: @monster, class: "control", local: true) do |f| %>
 
     <div class="field">
