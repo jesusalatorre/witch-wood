@@ -1,5 +1,6 @@
 
-<h1 class="title"> <%= @user.username  %>'s profile</h1>
+<h1 class="title is-salmon"> <%= @user.username  %>'s profile</h1>
+<h2 class="subtitle is-salmon"><%= @user.about %></h2>
 
 <%= link_to "Edit your profile", edit_user_path(@user), class: "button is-primary" %>
 
