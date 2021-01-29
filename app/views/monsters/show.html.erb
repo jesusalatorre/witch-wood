@@ -133,8 +133,10 @@
   </div>
 
   </div>
+  <% if logged_in? && @monster.user == current_user %>
   <div class="buttons is-right">
     <%= link_to "Edit", edit_monster_path(@monster), class: "button is-primary" %>
     <%= link_to 'Delete', monster_path(@monster), method: :delete, class: "button is-primary" %>
   </div>
+  <% end %>
 </div>
