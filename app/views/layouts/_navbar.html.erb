@@ -35,13 +35,14 @@
         <div class="buttons">
           <% if logged_in? %>
           <div class="navbar-item has-dropdown is-hoverable">
+            <%= "*" if current_user.admin? %>
             <%= link_to current_user.username, user_path(current_user), class: "navbar-link is-salmon is-arrowless"%>
               <div class="navbar-dropdown is-dark">
               <%= link_to "Edit Profile", edit_user_path(current_user), class: "navbar-item" %>
               <%= link_to "Delete Profile", user_path(current_user), class: "navbar-item", method: [:delete], data: { confirm: "Are you sure? This is permanent." } %>
             </div>
           </div>
-          <%= link_to 'Log Out', logout_path, class: "navbar-item" %>
+          <%= link_to 'Log Out', logout_path, class: "navbar-item", method: [:delete] %>
           <% else %>
           <a class="button is-primary" href="<%= signup_path %>">
             <strong>Sign up</strong>

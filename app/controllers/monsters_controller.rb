@@ -4,7 +4,6 @@ class MonstersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def show
-
   end
 
   def index
@@ -22,6 +21,7 @@ class MonstersController < ApplicationController
     @monster = Monster.new(monster_params)
     @monster.user = current_user
     if @monster.save
+      flash[:notice] = "Monster was created successfully."
       redirect_to @monster
     else
       render 'new'
@@ -30,6 +30,7 @@ class MonstersController < ApplicationController
 
   def update
     if @monster.update(monster_params)
+      flash[:notice] = "Monster was updated successfully."
       redirect_to @monster
     else
       render 'edit'
@@ -52,7 +53,7 @@ class MonstersController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @monster.user
+    if current_user != @monster.user && !current_user.admin?
       flash[:alert] = "You can only edit or delete your own monsters."
       redirect_to monster_path(@monster)
     end
