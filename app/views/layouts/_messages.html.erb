@@ -1,7 +1,11 @@
 <div class="container">
   <% flash.each do |name, msg| %>
-    <article class="message is-danger">
-      <div class="message-body">
+    <article class="message <% if name == "notice" %> is-success<% else %> is-danger<% end %>" id="msg-article">
+      <div class="message-header">
+        <p><% if name == "notice" %> Success! <% else %> Whoops... <% end %></p>
+        <button class="delete" aria-label="delete" id="close-message-btn"></button>
+      </div>
+      <div class="message-body mb-4">
         <%= msg %>
       </div>
     </article>
